@@ -3,8 +3,9 @@ services:
     name: sentinel-ai-cloud
     env: docker
     dockerfilePath: Dockerfile
-    plan: starter
+    plan: free
     region: oregon
+    healthCheckPath: /_stcore/health
     envVars:
       - key: APP_ENV
         value: production
@@ -19,7 +20,7 @@ services:
 
 databases:
   - name: sentinel-postgres
-    plan: starter
+    plan: free
     region: oregon
     databaseName: sentinel_db
     user: sentinel_user
