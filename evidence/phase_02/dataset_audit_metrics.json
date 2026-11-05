@@ -1,0 +1,37 @@
+{
+  "total_rows": 941,
+  "columns": [
+    "time",
+    "count",
+    "activity",
+    "datetime",
+    "date_str",
+    "hour_int"
+  ],
+  "exact_duplicates": 0,
+  "missing_values": {
+    "time": 0,
+    "count": 0,
+    "activity": 0
+  },
+  "count_value_counts": {
+    "0": 626,
+    "1": 306,
+    "2": 9
+  },
+  "activity_value_counts": {
+    "Low": 939,
+    "Low Activity": 2
+  },
+  "dates": {
+    "2026-05-02": 938,
+    "2026-04-07": 3
+  },
+  "hours": {
+    "12": 938,
+    "18": 3
+  },
+  "autocorrelation_lag_1": 0.7067378531066668,
+  "autocorrelation_lag_5": 0.5351249843935906,
+  "median_sample_interval_sec": 0.1122015
+}
