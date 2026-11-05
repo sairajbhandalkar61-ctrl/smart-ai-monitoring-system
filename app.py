@@ -4,7 +4,6 @@ import requests
 import pandas as pd
 import numpy as np
 import streamlit as st
-import cv2
 
 # Configuration
 API_URL = os.getenv("CLOUD_API_URL", "http://127.0.0.1:8000").rstrip("/")

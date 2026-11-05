@@ -25,12 +25,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY requirements-cloud.txt /app/
 RUN pip install --no-cache-dir -r requirements-cloud.txt
 
-# Copy application source code
-COPY sentinel/ /app/sentinel/
-COPY server.py /app/
-COPY app.py /app/
-COPY scripts/ /app/scripts/
-COPY docs/ /app/docs/
+# Copy all application source code
+COPY . /app/
 
 # Create data directory for SQLite fallback if Postgres is not attached
 RUN mkdir -p /app/data && chmod -R 777 /app/data
@@ -38,7 +34,5 @@ RUN mkdir -p /app/data && chmod -R 777 /app/data
 # Expose Streamlit dashboard port and FastAPI port
 EXPOSE 8000 8501
 
-# Entrypoint script starts FastAPI in background and Streamlit in foreground
-RUN chmod +x /app/scripts/docker_entrypoint.sh 2>/dev/null || true
-
-CMD ["sh", "-c", "uvicorn server:app --host 0.0.0.0 --port 8000 & streamlit run app.py --server.port ${PORT:-8501} --server.address 0.0.0.0 --server.headless true"]
+# Entrypoint executes FastAPI in background and Streamlit in foreground
+CMD ["sh", "-c", "uvicorn server:app --host 0.0.0.0 --port 8000 & streamlit run app.py --server.port ${PORT:-8501} --server.address 0.0.0.0 --server.headless true --server.enableCORS false --server.enableXsrfProtection false"]
