@@ -1,7 +1,7 @@
 def analyze_activity(count):
-    if count >= 5:
+    if count >= 15:
         return "High Crowd"
-    elif count >= 2:
+    elif count >= 5:
         return "Moderate Activity"
     else:
         return "Low Activity"
