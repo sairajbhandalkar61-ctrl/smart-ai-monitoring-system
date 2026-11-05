@@ -4,7 +4,7 @@
 #>
 [CmdletBinding()]
 param(
-    [string]$CloudUrl = "http://127.0.0.1:8000",
+    [string]$CloudUrl = "https://sentinel-ai-app-production.up.railway.app",
     [string]$DeviceId = "dell-edge-01",
     [string]$Token = "sentinel_edge_secure_token_2026"
 )
