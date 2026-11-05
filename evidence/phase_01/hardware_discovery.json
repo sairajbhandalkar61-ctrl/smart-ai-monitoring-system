@@ -1,0 +1,36 @@
+{
+    "Cameras":  {
+                    "InstanceId":  "USB\\VID_0C45\u0026PID_6738\u0026MI_00\\6\u0026517D4FA\u00260\u00260000",
+                    "Status":  "OK",
+                    "FriendlyName":  "Integrated Webcam"
+                },
+    "DiskC":  {
+                  "Free_GB":  56.68,
+                  "Used_GB":  180.29
+              },
+    "Pip":  "pip 26.1.1 from C:\\Users\\Admin\\AppData\\Local\\Python\\pythoncore-3.11-64\\Lib\\site-packages\\pip (python 3.11) ",
+    "PowerScheme":  "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)",
+    "CPU":  {
+                "MaxClockSpeedMHz":  1498,
+                "LogicalProcessors":  8,
+                "Name":  "11th Gen Intel(R) Core(TM) i5-1145G7 @ 2.60GHz",
+                "Cores":  4
+            },
+    "OS":  {
+               "Caption":  "Microsoft Windows 11 Pro",
+               "Architecture":  "64-bit",
+               "Build":  "26100",
+               "Version":  "10.0.26100"
+           },
+    "Python":  "Python 3.11.9",
+    "System":  {
+                   "Manufacturer":  "Dell Inc.",
+                   "Model":  "Latitude 3420",
+                   "TotalRAM_GB":  7.74
+               },
+    "GPUs":  {
+                 "AdapterRAM_MB":  2048,
+                 "Name":  "Intel(R) Iris(R) Xe Graphics",
+                 "DriverVersion":  "32.0.101.7088"
+             }
+}

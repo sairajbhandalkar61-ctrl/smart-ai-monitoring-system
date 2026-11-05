@@ -1,0 +1,39 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+
+# Nested clones & backups
+repo_clone/
+*.bak
+
+# Temporary and local test outputs
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+
+# Sensitive environment variables
+.env
+.env.local
+
+# Database files
+*.db
+*.sqlite3
+instance/
+
+# Local media / captured test frames with personal faces
+evidence/private/
+snapshots/*
+!snapshots/.gitkeep

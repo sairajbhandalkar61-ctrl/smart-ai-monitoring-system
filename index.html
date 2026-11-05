@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#2563eb">
+  <title>SENTINEL AI - Smart AI Monitoring System</title>
+  
+  <!-- Open Graph Meta Tags for LinkedIn / Social Previews -->
+  <meta property="og:title" content="SENTINEL AI - Smart AI Monitoring System">
+  <meta property="og:description" content="AI crowd monitoring & activity prediction system with real-time OpenCV detection and TensorFlow ANN deep learning.">
+  <meta property="og:image" content="./static/sentinel_ai_linkedin_showcase.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="720">
+  <meta property="og:type" content="website">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SENTINEL AI - Smart AI Monitoring System">
+  <meta name="twitter:description" content="Real-time crowd monitoring and 120Hz interactive dashboard.">
+  <meta name="twitter:image" content="./static/sentinel_ai_linkedin_showcase.jpg">
+
+  <link rel="stylesheet" href="./static/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <div class="app-container">
+
+    <!-- ====================================================================
+         LEFT SIDEBAR (Desktop Only)
+         ==================================================================== -->
+    <aside class="sidebar">
+      <div>
+        <div class="brand-section">
+          <div class="brand-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 7V5a2 2 0 0 1 2-2h2"/>
+              <path d="M17 3h2a2 2 0 0 1 2 2v2"/>
+              <path d="M21 17v2a2 2 0 0 1-2 2h-2"/>
+              <path d="M7 21H5a2 2 0 0 1-2-2v-2"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </div>
+          <div class="brand-text">
+            <h1>SENTINEL AI</h1>
+            <p>Smart AI Monitoring System</p>
+          </div>
+        </div>
+
+        <nav>
+          <ul class="nav-menu">
+            <li>
+              <a class="nav-item active" onclick="switchNav(this)">
+                <span class="icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="7" height="7" rx="1.5"/>
+                    <rect x="14" y="3" width="7" height="7" rx="1.5"/>
+                    <rect x="14" y="14" width="7" height="7" rx="1.5"/>
+                    <rect x="3" y="14" width="7" height="7" rx="1.5"/>
+                  </svg>
+                </span>
+                Dashboard
+              </a>
+            </li>
+            <li>
+              <a class="nav-item" onclick="switchNav(this)">
+                <span class="icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m22 8-6 4 6 4V8Z"/>
+                    <rect x="2" y="6" width="14" height="12" rx="2"/>
+                  </svg>
+                </span>
+                Live Monitoring
+              </a>
+            </li>
+            <li>
+              <a class="nav-item" onclick="switchNav(this)">
+                <span class="icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 3v18h18"/>
+                    <path d="m19 9-5 5-4-4-3 3"/>
+                  </svg>
+                </span>
+                Analytics
+              </a>
+            </li>
+            <li>
+              <a class="nav-item" onclick="switchNav(this)">
+                <span class="icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
+                    <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
+                  </svg>
+                </span>
+                Alerts & Logs
+                <span class="nav-badge"></span>
+              </a>
+            </li>
+            <li>
+              <a class="nav-item" onclick="switchNav(this)">
+                <span class="icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                    <line x1="16" y1="13" x2="8" y2="13"/>
+                    <line x1="16" y1="17" x2="8" y2="17"/>
+                  </svg>
+                </span>
+                Reports
+              </a>
+            </li>
+            <li>
+              <a class="nav-item" onclick="switchNav(this)">
+                <span class="icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="3"/>
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                  </svg>
+                </span>
+                Settings
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Bottom Promo Gradient Banner -->
+      <div class="sidebar-promo-card">
+        <h3>AI Powered Surveillance</h3>
+        <p>Safer Spaces<br>Smarter Insights</p>
+        <button class="promo-btn" title="AI Analytics">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </aside>
+
+    <!-- ====================================================================
+         MAIN CONTENT AREA
+         ==================================================================== -->
+    <main class="main-wrapper">
+
+      <!-- TOP STICKY HEADER (Responsive Desktop & Mobile) -->
+      <header class="top-header">
+        <!-- Mobile Brand (visible only on phone) -->
+        <div class="mobile-brand">
+          <div class="mobile-brand-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M3 7V5a2 2 0 0 1 2-2h2"/>
+              <path d="M17 3h2a2 2 0 0 1 2 2v2"/>
+              <path d="M21 17v2a2 2 0 0 1-2 2h-2"/>
+              <path d="M7 21H5a2 2 0 0 1-2-2v-2"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </div>
+          <div class="mobile-brand-text">
+            <h1>SENTINEL AI</h1>
+            <p>Smart AI Monitoring System</p>
+          </div>
+        </div>
+
+        <!-- Desktop Search Box -->
+        <div class="search-box">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="searchInput" placeholder="Search cameras, sessions, or alerts..." oninput="handleSearch(this.value)">
+        </div>
+
+        <!-- Header Right Actions -->
+        <div class="header-right">
+          <!-- 120Hz ProMotion Badge (Desktop) -->
+          <div class="hz-pill" id="hzTogglePill" title="Ultra-Smooth 120Hz ProMotion" onclick="toggleFpsMode()">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            <span id="hzText">120Hz Pro</span>
+          </div>
+
+          <!-- Sound Mute Toggle -->
+          <button class="icon-btn" id="soundToggleBtn" title="Sound Alert" onclick="toggleSound()">
+            <svg id="soundIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+          </button>
+
+          <!-- Dark/Light Mode Switcher -->
+          <button class="icon-btn" id="themeToggleBtn" title="Toggle Theme" onclick="toggleTheme()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+
+          <!-- Notification Bell -->
+          <button class="icon-btn" title="Alerts" onclick="triggerAlertNotification()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+            <span class="badge-dot"></span>
+          </button>
+
+          <!-- Desktop User Profile -->
+          <div class="user-profile">
+            <div class="avatar">SB</div>
+            <div class="user-info">
+              <div class="user-name">Sairaj Bhandalkar</div>
+              <div class="user-role">MCA Student</div>
+            </div>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </div>
+      </header>
+
+      <!-- ====================================================================
+           CORE DASHBOARD
+           ==================================================================== -->
+      <div class="content-body" id="dashboard-view">
+
+        <!-- TOP STATS ROW (3-Card Strip on Mobile, 4-Card on Desktop) -->
+        <div class="stats-grid">
+          <!-- Card 1: Detected Faces -->
+          <div class="stat-card">
+            <div class="stat-icon blue">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="stat-details">
+              <div class="stat-header">Faces</div>
+              <div class="stat-value-row">
+                <span class="stat-value" id="kpiFaces">12</span>
+                <span class="stat-badge green" id="kpiFacesDiff">↑ 3</span>
+              </div>
+              <div class="stat-subtext">People currently detected</div>
+            </div>
+          </div>
+
+          <!-- Card 2: Activity Level -->
+          <div class="stat-card">
+            <div class="stat-icon orange">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <div class="stat-details">
+              <div class="stat-header">Activity</div>
+              <div class="stat-value-row">
+                <span class="stat-value orange" id="kpiActivity">Moderate</span>
+              </div>
+              <div class="stat-subtext">AI Prediction (ANN)</div>
+            </div>
+          </div>
+
+          <!-- Card 3: Camera Status -->
+          <div class="stat-card">
+            <div class="stat-icon green">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 8-6 4 6 4V8Z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>
+            </div>
+            <div class="stat-details">
+              <div class="stat-header">Camera</div>
+              <div class="stat-value-row">
+                <span class="stat-value green" id="kpiCameraStatus">Live</span>
+              </div>
+              <div class="stat-subtext">
+                <span id="kpiCameraSubtext">Camera 01 - Active</span>
+                <span class="status-dot green"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Uptime (Hidden on Mobile to match 3-card mobile mockup) -->
+          <div class="stat-card uptime-card">
+            <div class="stat-icon purple">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="stat-details">
+              <div class="stat-header">Uptime</div>
+              <div class="stat-value-row">
+                <span class="stat-value" id="kpiUptime">00:18:24</span>
+              </div>
+              <div class="stat-subtext">Monitoring session</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MIDDLE ROW: LIVE CAMERA FEED & AI CURRENT ANALYSIS -->
+        <div class="middle-grid">
+
+          <!-- Left: Live Camera Feed Container -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title-group">
+                <div class="card-title-icon purple">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+                </div>
+                <div class="card-title">Live Camera Feed</div>
+                <div class="card-status-pill">
+                  <span class="status-dot green"></span>
+                  <span id="feedStatusPill">Camera 01 - Streaming</span>
+                </div>
+              </div>
+
+              <!-- Camera Dropdown Selector -->
+              <select class="select-dropdown" id="cameraSelector" onchange="changeCameraSource(this.value)">
+                <option value="sim-1">Camera 01</option>
+                <option value="sim-2">Camera 02 - North Wing</option>
+                <option value="webcam">📱 Mobile / WebCam (Live)</option>
+                <option value="upload">Upload Video / Photo</option>
+              </select>
+            </div>
+
+            <!-- Scenario Quick Preset Chips -->
+            <div class="scenario-chips-row">
+              <button class="scenario-chip active" id="chipModerate" onclick="setScenario('moderate')">🟢 Normal Flow</button>
+              <button class="scenario-chip" id="chipHigh" onclick="setScenario('high')">🔴 Rush Hour</button>
+              <button class="scenario-chip" id="chipLow" onclick="setScenario('low')">🔵 Off-Peak</button>
+            </div>
+
+            <!-- 120Hz Hardware-Accelerated Video Viewport -->
+            <div class="video-viewport" id="viewportContainer" onclick="handleCanvasClick(event)">
+              <video id="webcamElement" class="video-element" autoplay playsinline muted></video>
+              <canvas id="surveillanceCanvas" class="canvas-overlay"></canvas>
+
+              <!-- Interactive Hover Inspector Tooltip -->
+              <div class="person-inspector-tooltip" id="personTooltip">
+                <div class="id-badge" id="tooltipId">Face #1</div>
+                <div>Status: <span style="color:#34d399;">Tracked</span></div>
+                <div>Confidence: <span style="color:#38bdf8;">98.2%</span></div>
+                <div>Movement: <span id="tooltipSpeed">0.8 m/s</span></div>
+              </div>
+
+              <!-- Corner HUD Badges -->
+              <div class="hud-badge fps">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                <span id="hudFps">120 FPS</span>
+              </div>
+
+              <div class="hud-badge meta">
+                <span id="hudFaces">Faces: 12</span>
+                <span class="act-badge" id="hudActivity">Activity: Moderate</span>
+              </div>
+
+              <!-- PTZ Zoom Controls -->
+              <div class="hud-zoom-controls">
+                <button class="zoom-btn" onclick="zoomFeed(1, event)">1x</button>
+                <button class="zoom-btn" onclick="zoomFeed(1.4, event)">1.4x</button>
+                <button class="zoom-btn" onclick="zoomFeed(2, event)">2x</button>
+              </div>
+            </div>
+
+            <!-- Controls Row -->
+            <div class="video-controls">
+              <div class="ctrl-btn-group">
+                <button class="btn btn-primary" id="btnStartCam" onclick="startCamera()">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  <span>Start</span>
+                </button>
+                <button class="btn btn-danger" id="btnStopCam" onclick="stopCamera()">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="4" width="16" height="16" rx="2"/></svg>
+                  <span>Stop</span>
+                </button>
+                <button class="btn btn-glass" id="btnSnapshot" onclick="takeSnapshot()">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                </button>
+              </div>
+
+              <button class="icon-btn" title="Fullscreen" onclick="toggleFullscreen()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+              </button>
+            </div>
+
+            <!-- Recent Snapshot Filmstrip -->
+            <div style="margin-top:12px; border-top:1px solid var(--border-light); padding-top:8px;">
+              <div class="snapshot-gallery-strip" id="snapshotStrip">
+                <img src="./static/surveillance_sample.jpg" class="snapshot-thumb" onclick="previewThumb(this.src)" alt="Sample">
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: AI Current Analysis Card (Dual Desktop & Mobile Layout) -->
+          <div class="card analysis-card">
+            <div class="card-header">
+              <div class="card-title-group">
+                <div class="card-title-icon purple">
+                  <span style="font-size:12px; font-weight:800;">AI</span>
+                </div>
+                <div class="card-title">Activity Analysis</div>
+              </div>
+              <span style="font-size:14px; font-weight:700; color:var(--text-muted);">→</span>
+            </div>
+
+            <!-- Activity Main Meter -->
+            <div class="analysis-item" style="margin-bottom:8px;">
+              <div class="analysis-label">Activity Level</div>
+              <div class="analysis-val-row">
+                <div class="analysis-val" id="analysisActivityText">Moderate</div>
+                <div class="analysis-conf" id="analysisConfidenceText">62% Confidence</div>
+              </div>
+              <div class="meter-bar">
+                <div class="meter-fill orange" id="activityConfidenceMeter" style="width: 62%;"></div>
+              </div>
+            </div>
+
+            <!-- Mobile-Optimized Sub-cards (Side-by-side as shown in phone mockup) -->
+            <div class="mobile-analysis-subcards">
+              <div class="subcard-item">
+                <div class="subcard-icon purple">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                </div>
+                <div class="subcard-text">
+                  <div class="subcard-title">Detected Faces</div>
+                  <div class="subcard-val" id="mobileFacesText">12</div>
+                </div>
+              </div>
+              <div class="subcard-item">
+                <div class="subcard-icon blue">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/></svg>
+                </div>
+                <div class="subcard-text">
+                  <div class="subcard-title">Movement</div>
+                  <div class="subcard-val" style="color:var(--accent-purple);" id="mobileMovementText">Medium</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Desktop-Only Detailed Item 2: Sparkline -->
+            <div class="analysis-item desktop-analysis-item">
+              <div class="analysis-label">Detected Faces</div>
+              <div class="analysis-val-row">
+                <div class="analysis-val" style="color:var(--text-primary);" id="analysisFacesText">12</div>
+                <div style="font-size:11px; color:var(--text-muted);">Live count</div>
+              </div>
+              <div style="width:100%; height:32px; margin-top:6px;">
+                <canvas id="sparklineCanvas"></canvas>
+              </div>
+            </div>
+
+            <!-- Desktop-Only Detailed Item 3: Movement Bar -->
+            <div class="analysis-item desktop-analysis-item">
+              <div class="analysis-label">Movement Level</div>
+              <div class="analysis-val-row">
+                <div class="analysis-val" style="color:var(--accent-purple);" id="analysisMovementText">Medium</div>
+                <div style="display:flex; gap:3px; align-items:flex-end; height:18px;">
+                  <span style="width:4px; height:6px; background:var(--accent-purple); border-radius:2px;"></span>
+                  <span style="width:4px; height:12px; background:var(--accent-purple); border-radius:2px;"></span>
+                  <span style="width:4px; height:16px; background:var(--accent-purple); border-radius:2px;"></span>
+                  <span style="width:4px; height:8px; background:var(--accent-purple); border-radius:2px; opacity:0.4;"></span>
+                </div>
+              </div>
+              <div class="meter-bar">
+                <div class="meter-fill purple" id="movementMeter" style="width: 58%;"></div>
+              </div>
+            </div>
+
+            <!-- AI Insight Note -->
+            <div style="font-size:11px; color:var(--text-secondary); background:rgba(37,99,235,0.06); padding:9px 12px; border-radius:12px; border:1px solid rgba(37,99,235,0.12); display:flex; gap:8px; align-items:flex-start; margin-top:8px;">
+              <span>💡</span>
+              <span id="aiInsightText">Pedestrian movement moderate. ANN calibrated classification online.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOTTOM ROW: TRENDS, DISTRIBUTION, RECENT ALERTS -->
+        <div class="bottom-grid">
+
+          <!-- Card 1: Crowd Count Trend -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title-group">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2.2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+                <div class="card-title">Crowd Count Trend</div>
+              </div>
+              <select class="select-dropdown" id="trendTimeframe" onchange="updateTrendData(this.value)">
+                <option value="30m">Last 30 Minutes</option>
+                <option value="1h">Last 1 Hour</option>
+                <option value="today">Today</option>
+              </select>
+            </div>
+            <div class="chart-container">
+              <canvas id="trendChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Card 2: Activity Distribution -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title-group">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-purple)" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 10 10h-10z"/></svg>
+                <div class="card-title">Activity Distribution</div>
+              </div>
+            </div>
+            <div class="donut-wrapper">
+              <canvas id="distributionChart"></canvas>
+              <div class="donut-center-info">
+                <div class="label">Total</div>
+                <div class="count" id="donutTotalCount">1208</div>
+                <div class="label">Predictions</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Recent Alerts -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title-group">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-purple)" stroke-width="2.2"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+                <div class="card-title">Recent Alerts</div>
+              </div>
+              <span style="font-size:11px; font-weight:700; color:var(--primary-blue); cursor:pointer;" onclick="exportAlertsCSV()">Export CSV</span>
+            </div>
+            <div class="alerts-list" id="recentAlertsContainer"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+
+    <!-- ====================================================================
+         FLOATING BOTTOM NAV BAR (Phone Screen Matching)
+         ==================================================================== -->
+    <nav class="mobile-nav-bar">
+      <div class="mobile-nav-item active" onclick="switchMobileNav(this)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Home</span>
+      </div>
+      <div class="mobile-nav-item" onclick="switchMobileNav(this)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+        <span>Analytics</span>
+      </div>
+      <div class="mobile-nav-item" onclick="switchMobileNav(this)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+        <span>Alerts</span>
+      </div>
+      <div class="mobile-nav-item" onclick="switchMobileNav(this)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        <span>Settings</span>
+      </div>
+    </nav>
+
+  </div>
+
+  <!-- SNAPSHOT PREVIEW MODAL -->
+  <div style="display:none; position:fixed; inset:0; background:rgba(15,23,42,0.6); backdrop-filter:blur(4px); align-items:center; justify-content:center; z-index:200;" id="snapshotModal">
+    <div style="background:var(--bg-card); border-radius:20px; max-width:540px; width:92%; padding:20px; box-shadow:0 25px 50px rgba(0,0,0,0.3); display:flex; flex-direction:column; gap:14px;">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <h3 style="font-size:15px; font-weight:700;">Captured Surveillance Frame</h3>
+        <button class="icon-btn" onclick="document.getElementById('snapshotModal').style.display='none'">&times;</button>
+      </div>
+      <img id="snapshotPreviewImg" style="width:100%; border-radius:12px; border:1px solid var(--border-light);" src="" alt="Snapshot">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span style="font-size:11px; color:var(--text-muted);" id="snapshotTimestamp">Saved</span>
+        <a id="snapshotDownloadBtn" href="" download="sentinel_snapshot.jpg" class="btn btn-primary">Download Image</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toastContainer"></div>
+  <script src="./static/app.js"></script>
+</body>
+</html>
