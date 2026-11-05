@@ -1,3 +1,5 @@
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/sairajbhandalkar61-ctrl/smart-ai-monitoring-system)
+
 # 🛡️ SENTINEL AI — Crowd Intelligence & Occupancy Platform
 ### Production Edge Computer Vision | Hybrid Cloud Deployment | Academic Research Publication
 
