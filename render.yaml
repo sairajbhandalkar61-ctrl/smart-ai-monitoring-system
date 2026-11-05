@@ -1,9 +1,25 @@
 services:
   - type: web
-    name: sentinel-ai-api
-    env: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn server:app --host 0.0.0.0 --port $PORT
+    name: sentinel-ai-cloud
+    env: docker
+    dockerfilePath: Dockerfile
+    plan: starter
+    region: oregon
     envVars:
-      - key: PYTHON_VERSION
-        value: 3.10.12
+      - key: APP_ENV
+        value: production
+      - key: IS_CLOUD
+        value: "true"
+      - key: PORT
+        value: "8501"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: sentinel-postgres
+          property: connectionString
+
+databases:
+  - name: sentinel-postgres
+    plan: starter
+    region: oregon
+    databaseName: sentinel_db
+    user: sentinel_user

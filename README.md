@@ -1,139 +1,97 @@
-# 🚀 SENTINEL AI - Smart AI Monitoring System
+# 🛡️ SENTINEL AI — Crowd Intelligence & Occupancy Platform
+### Production Edge Computer Vision | Hybrid Cloud Deployment | Academic Research Publication
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-2563eb?style=for-the-badge&logo=github)](https://sairajbhandalkar61-ctrl.github.io/smart-ai-monitoring-system/)
-[![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B?style=for-the-badge&logo=streamlit)](https://share.streamlit.io/)
-[![Python](https://img.shields.io/badge/Python-3.10-3776AB?style=for-the-badge&logo=python)](https://python.org)
-[![TensorFlow](https://img.shields.io/badge/TensorFlow-2.14-FF6F00?style=for-the-badge&logo=tensorflow)](https://tensorflow.org)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.109-009688?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com)
-
-An end-to-end AI-powered surveillance and crowd analytics platform with real-time computer vision detection, deep learning activity classification (ANN), and a high-performance **120Hz responsive dashboard** accessible across desktop, tablet, and mobile devices worldwide.
+**Author:** Sairaj Bhandalkar (MITCOM-CA, MIT ADT University, Pune)  
+**Research Supervisor:** Prof. Pallavi Gaikwad  
+**Host Target Platform:** Dell Latitude 3420 | 11th Gen Intel(R) Core(TM) i5-1145G7 @ 2.60GHz | Windows 11 Pro  
 
 ---
 
-## 🌐 24/7 Live Cloud Dashboard
+## 🌐 Hybrid Cloud & Edge Architecture
 
-👉 **Open Live Link Anywhere**: [https://sairajbhandalkar61-ctrl.github.io/smart-ai-monitoring-system/](https://sairajbhandalkar61-ctrl.github.io/smart-ai-monitoring-system/)
+SENTINEL AI separates vision compute from cloud accessibility:
 
-> Works on **any mobile phone, tablet, and PC** with full touch controls, webcam integration, real-time Chart.js telemetry, in-browser ANN neural inference, and instant snapshots.
-
----
-
-## 📸 System Showcase
-
-![SENTINEL AI Showcase](./sentinel_ai_linkedin_showcase.jpg)
-
----
-
-## 🎯 Key Features
-
-- **Multi-Cascade OpenCV Detection**: Real-time frontal, profile, and upper-body person detection with Non-Maximum Suppression (NMS) to eliminate duplicate bounding boxes.
-- **Deep Learning Classification (ANN)**: Multi-layer Artificial Neural Network trained on pedestrian count, temporal hours, and movement delta dynamics to classify crowd state into `Low`, `Moderate`, and `High`.
-- **120Hz High-Refresh Dashboard**: GPU-accelerated HTML5 Canvas with sub-pixel interpolation for ultra-smooth rendering, custom radar sweeps, and interactive bounding-box inspectors.
-- **Mobile-First Responsive Design**: Tailored viewport with 3-column top metrics, side-by-side activity cards, quick-action floating controls, and native bottom navigation.
-- **Zero-Dependency Cloud Hosting**: Pre-compiled client-side ANN engine allows the live frontend to run 24/7 on GitHub Pages without requiring local uvicorn server processes.
-- **FastAPI & Streamlit Backends**: Dual deployment options supporting REST API endpoints (`/api/predict`, `/api/detect`, `/api/stats`) and Streamlit cloud hosting.
-
----
-
-## 🧠 Tech Stack
-
-- **Computer Vision**: OpenCV (Haar Cascades + NMS fusion)
-- **Deep Learning**: TensorFlow / Keras (Artificial Neural Network)
-- **Data Engineering**: NumPy, Pandas, Scikit-learn, Joblib
-- **Backends**: FastAPI, Uvicorn, Streamlit
-- **Frontend & Visuals**: HTML5 Canvas, CSS3 Glassmorphism, Chart.js, Vanilla JS (120 FPS requestAnimationFrame loop)
-- **Cloud Deployment**: GitHub Pages (24/7 Live Web), Streamlit Community Cloud, Render
-
----
-
-## 📁 Project Structure
-
-```text
-smart-ai-monitoring-system/
-│── index.html                         # Root entrypoint for GitHub Pages 24/7 cloud hosting
-│── app.py                             # Streamlit web application
-│── server.py                          # FastAPI production server with REST endpoints
-│── detection.py                       # OpenCV multi-cascade person detection with NMS
-│── ml_model.py                        # TensorFlow ANN model predictor & confidence scorer
-│── llm.py                             # Rule-based and LLM security report generator
-│── analytics.py                       # Trend computation and threshold analytics
-│── requirements.txt                   # Cloud-ready dependencies (opencv-python-headless)
-│── render.yaml                        # Render cloud backend configuration
-│── sentinel_ai_linkedin_showcase.jpg  # Project showcase banner & thumbnail
-│── surveillance_sample.jpg            # Reference surveillance footage
-│
-├── .github/
-│   └── workflows/
-│       └── deploy.yml                 # Automated GitHub Pages CI/CD workflow
-│
-├── static/
-│   ├── index.html                     # Backup standalone template
-│   ├── style.css                      # 120Hz responsive glassmorphism styles
-│   ├── app.js                         # 120 FPS canvas engine & client ANN fallback
-│   └── sentinel_ai_linkedin_showcase.jpg
-│
-└── models/
-    ├── dl_model.h5                    # Trained TensorFlow ANN weights
-    ├── scaler.pkl                     # StandardScaler transform
-    └── label_encoder.pkl              # Class label encoder
+```
+[Dell Latitude 3420 Laptop]
+  - Integrated Webcam (DirectShow Index 0)
+  - SSDLite320-MobileNetV3 (110.98 ms / 9.01 FPS on CPU)
+  - IoU Multi-Object Tracker (100% flicker reduction)
+  - Virtual Tripwire & Monitoring Zones
+       │
+       ▼ (Outbound HTTPS POST)
+[Cloud FastAPI Backend (Railway / Render)]
+  - Edge Device Ingestion & Heartbeat Monitoring
+  - PBKDF2-HMAC-SHA256 Authentication
+  - Multi-Engine Storage (PostgreSQL & SQLite)
+       │
+       ├───► [Cloud PostgreSQL Database]
+       │
+       ▼
+[Cloud Streamlit Command Center]
+  - 12 Responsive Navigation Pages
+  - Mobile, Tablet, and Desktop Adaptive Layout
+  - Live Edge Telemetry & Reconciled Headcounts
 ```
 
 ---
 
-## 🚀 Running Locally
+## 🚀 Quickstart Guides
 
-### 1. Clone the repository
-```bash
-git clone https://github.com/sairajbhandalkar61-ctrl/smart-ai-monitoring-system.git
-cd smart-ai-monitoring-system
+### 1. Local Windows Execution (Dell Laptop)
+```powershell
+# Automated diagnostic and environment setup
+.\scripts\setup_windows.ps1
+
+# Launch local Streamlit Command Center (http://localhost:8501)
+.\scripts\run_sentinel.ps1 -Mode dashboard
+
+# Launch local FastAPI REST API (http://127.0.0.1:8000)
+.\scripts\run_sentinel.ps1 -Mode api
 ```
 
-### 2. Install dependencies
-```bash
-pip install -r requirements.txt
+### 2. Running Dell Edge Agent (Streaming to Cloud)
+```powershell
+# Stream Dell webcam intelligence directly to your Cloud URL:
+.\scripts\run_edge_agent.ps1 -CloudUrl "https://your-app.up.railway.app"
 ```
 
-### 3. Launch the 120Hz Web Dashboard (FastAPI)
-```bash
-uvicorn server:app --reload --port 8000
+### 3. Run Automated Pytest Suite
+```powershell
+python -m pytest -v
 ```
-Visit: `http://localhost:8000`
-
-### 4. Or launch the Streamlit App
-```bash
-streamlit run app.py
-```
-Visit: `http://localhost:8501`
+*(All 20 unit and integration tests passing)*
 
 ---
 
-## ☁️ Cloud Deployment Options
+## 🔐 Cloud Authentication & Accounts
 
-1. **GitHub Pages (Frontend - 24/7 Zero Cost)**:
-   - Already configured! Automatically deploys from the `main` or `gh-pages` branch.
-   - URL: `https://sairajbhandalkar61-ctrl.github.io/smart-ai-monitoring-system/`
-
-2. **Streamlit Community Cloud (Python UI)**:
-   - Go to [share.streamlit.io](https://share.streamlit.io/)
-   - Connect repository `sairajbhandalkar61-ctrl/smart-ai-monitoring-system`
-   - Set Main file path: `app.py` -> Click **Deploy**
-
-3. **Render (FastAPI REST Backend)**:
-   - Connect repository to [render.com](https://render.com/)
-   - It will automatically read `render.yaml` and deploy `server.py`.
+When accessing the deployed cloud dashboard, use one of the seeded accounts:
+* **Administrator:** `admin` / `SentinelAdmin2026!` (Full control, reconciliation, settings)
+* **Operator:** `operator` / `Operator2026!` (Live monitoring, alerts, reports)
 
 ---
 
-## 🧑‍💻 Author
+## 📊 Empirical Benchmarks (Intel Core i5-1145G7 CPU)
 
-**Sairaj Bhandalkar**  
-MCA (Data Science) | MIT ADT University  
-- **GitHub**: [@sairajbhandalkar61-ctrl](https://github.com/sairajbhandalkar61-ctrl)  
-- **LinkedIn**: [sairaj-bhandalkar-a572a3378](https://www.linkedin.com/in/sairaj-bhandalkar-a572a3378/)  
-- **Email**: sairajbhandalkar61@gmail.com
+| Metric | Haar Cascade Baseline | SSDLite320 MobileNetV3 (Proposed) |
+| :--- | :---: | :---: |
+| **Inference Latency** | 39.91 ms | **110.98 ms (9.01 FPS on CPU)** |
+| **Target Object** | Faces & Upper-Body | **Full Anatomical Pedestrian Body** |
+| **Turning / Backs** | Fails | **Robust Detection from any angle** |
+| **Tracking Stability**| Variance 0.2100 | **Variance 0.0000 (100% flicker reduction)** |
+| **Host Memory RSS** | 350 MB | **391 MB (Budget: 1500 MB)** |
 
 ---
 
-## ⭐ Support
+## 📚 Complete Project Documentation
 
-If you find this project helpful or inspiring, please give this repository a ⭐ on GitHub!
+* [docs/CLOUD_DEPLOYMENT_GUIDE.md](docs/CLOUD_DEPLOYMENT_GUIDE.md) — Railway & Render deployment steps
+* [docs/EDGE_DEVICE_SETUP.md](docs/EDGE_DEVICE_SETUP.md) — Dell Latitude 3420 edge agent guide
+* [docs/PUBLIC_ACCESS_AND_SECURITY.md](docs/PUBLIC_ACCESS_AND_SECURITY.md) — RBAC and privacy protocols
+* [docs/CLOUD_DATABASE_GUIDE.md](docs/CLOUD_DATABASE_GUIDE.md) — PostgreSQL and SQLite persistence guide
+* [docs/DEPLOYMENT_VERIFICATION_REPORT.md](docs/DEPLOYMENT_VERIFICATION_REPORT.md) — Full verification matrix
+* [docs/HARDWARE_PROFILE.md](docs/HARDWARE_PROFILE.md) — Verified laptop hardware specs
+* [docs/SYSTEM_ARCHITECTURE.md](docs/SYSTEM_ARCHITECTURE.md) — System architecture specification
+* [docs/TEST_REPORT.md](docs/TEST_REPORT.md) — Pytest QA report
+* [SENTINEL_AI_Research_Paper_Final.docx](SENTINEL_AI_Research_Paper_Final.docx) — Academic research manuscript
+* [SENTINEL_AI_Research_Paper_Final.pdf](SENTINEL_AI_Research_Paper_Final.pdf) — Formatted publication PDF

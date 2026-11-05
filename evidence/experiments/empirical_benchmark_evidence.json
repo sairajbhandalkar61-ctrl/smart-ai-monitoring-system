@@ -1,0 +1,76 @@
+{
+  "timestamp": 1793903507.5044343,
+  "hardware": {
+    "cpu": "11th Gen Intel(R) Core(TM) i5-1145G7 @ 2.60GHz",
+    "cores": 4,
+    "threads": 8,
+    "ram_gb": 7.74,
+    "os": "Windows 11 Pro 64-bit"
+  },
+  "experiment_1_detector_comparison": {
+    "haar_baseline": {
+      "model_name": "HaarCascade-MultiScale-Baseline",
+      "latency_ms": 39.91,
+      "fps": 25.05,
+      "avg_detections": 2.0
+    },
+    "ssdlite_mobilenet": {
+      "model_name": "SSDLite320-MobileNetV3-CPU",
+      "latency_ms": 110.98,
+      "fps": 9.01,
+      "avg_detections": 2.0
+    }
+  },
+  "experiment_2_tracking_stability": {
+    "frames_evaluated": 30,
+    "raw_detection_variance": 0.21,
+    "tracked_count_variance": 0.0,
+    "flicker_reduction_pct": 100.0
+  },
+  "experiment_3_resolution_latency": {
+    "320x240": {
+      "latency_ms": 128.8,
+      "fps": 7.76
+    },
+    "416x416": {
+      "latency_ms": 107.46,
+      "fps": 9.31
+    },
+    "640x480": {
+      "latency_ms": 135.85,
+      "fps": 7.36
+    }
+  },
+  "experiment_5_lighting_robustness": {
+    "scale_0.1": {
+      "brightness": 12.5,
+      "blur_score": 75.46,
+      "reliable": false,
+      "status": "Poor Quality: Low Lighting \u2014 Manual Verification Required"
+    },
+    "scale_0.3": {
+      "brightness": 38.4,
+      "blur_score": 671.53,
+      "reliable": true,
+      "status": "Optimal Quality"
+    },
+    "scale_0.6": {
+      "brightness": 77.3,
+      "blur_score": 2681.18,
+      "reliable": true,
+      "status": "Optimal Quality"
+    },
+    "scale_1.0": {
+      "brightness": 129.5,
+      "blur_score": 7447.78,
+      "reliable": true,
+      "status": "Optimal Quality"
+    },
+    "scale_1.5": {
+      "brightness": 193.34,
+      "blur_score": 15985.95,
+      "reliable": true,
+      "status": "Optimal Quality"
+    }
+  }
+}
